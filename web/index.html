@@ -89,10 +89,26 @@
           }
         }, 4000);
       });
+
+
+      navigator.serviceWorker.register('/firebase-messaging-sw.js');
     } else {
       // Service workers not supported. Just drop the <script> tag.
       loadMainDartJs();
     }
   </script>
+   <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-messaging.js"></script>
+   <script>
+       const firebaseConfig = {
+           apiKey: "AIzaSyAF-1vDsV-NU7ihvojiw7uLYhbico8pA6g",
+           authDomain: "trackingandmonitoringsystem.firebaseapp.com",
+           projectId: "trackingandmonitoringsystem",
+           storageBucket: "trackingandmonitoringsystem.appspot.com",
+           messagingSenderId: "896495303491",
+           appId: "1:896495303491:web:c085781b02c5c5968bcdf6"
+       };
+       var app = firebase.initializeApp(firebaseConfig);
+    </script>
 </body>
 </html>
