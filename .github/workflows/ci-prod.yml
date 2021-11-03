@@ -18,5 +18,8 @@ jobs:
       - run: flutter config --enable-web
       - run: flutter pub get
       - run: flutter build web --release
-      - run: echo ${{ secrets.WEB_PROD_PATH }} > ~/output.txt
+      - name: clean previous version
+        run: rm -rf $(base64 --decode ${{ secrets.WEB_PROD_PATH }})/*
+      - name: deploy new version
+        run: cp -r ./build/web/* $(base64 --decode ${{ secrets.WEB_PROD_PATH }})
      
