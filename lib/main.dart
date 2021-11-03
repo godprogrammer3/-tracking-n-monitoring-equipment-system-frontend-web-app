@@ -63,7 +63,9 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       this.isGettingToken = true;
     });
-    String? token = await FirebaseMessaging.instance.getToken();
+    String? token = await FirebaseMessaging.instance.getToken(
+        vapidKey:
+            'CqwNgf6zub3U1OvULG0N7XcChO_1P7dcXabpRD1MMA87dheTw08mAQ7a54elciCt1Mw7LSQB6FfSolmE');
     setState(() {
       this.isGettingToken = false;
     });
